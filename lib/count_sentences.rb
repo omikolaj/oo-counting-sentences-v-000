@@ -27,14 +27,20 @@ class String
     end
   end
 
-  def count_sentences
+  #def count_sentences
     #binding.pry
-    counter = 0
-    self.split(" ").each do |word|
-      if(word.end_with?(".") || word.end_with?("?") || word.end_with?("!"))
-        counter = counter + 1
-      end
-    end
-    counter
+  #  counter = 0
+  #  self.split(" ").each do |word|
+  #    if(word.end_with?(".") || word.end_with?("?") || word.end_with?("!"))
+  #      counter = counter + 1
+  #    end
+  #  end
+  #  counter
+  #end
+#end
+
+  def count_sentences
+    binding.pry
+    self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
   end
 end
